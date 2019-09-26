@@ -32,7 +32,7 @@ class SignIn extends Component {
   }
 
   render() {
-    const { email } = this.state;
+    const { email, password } = this.state;
 
     return (
       <Container>
@@ -43,7 +43,7 @@ class SignIn extends Component {
           <input type="email" name="email" value={email} onChange={this.handleInputChange} />
 
           <span>SENHA</span>
-          <input type="password" name="password" />
+          <input type="password" name="password" value={password} onChange={this.handleInputChange} />
 
           <Button size="big" type="submit">
             Entrar
