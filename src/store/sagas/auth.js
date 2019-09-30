@@ -1,4 +1,6 @@
 import { call, put } from 'redux-saga/effects';
+import { push } from 'connected-react-router';
+import { actions as toastrActions } from 'react-redux-toastr';
 
 import api from '~/services/api';
 
@@ -14,9 +16,13 @@ export function* signIn({ email, password }) {
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
-
     yield put(AuthActions.signInSuccess(response.data.token));
+    yield put(push('/'));
   } catch (err) {
-    console.log(err);
+    yield put(toastrActions.add({
+      type: 'error',
+      title: 'Falha no login',
+      message: 'Verifique seu e-mail/senha!',
+    }));
   }
 }
