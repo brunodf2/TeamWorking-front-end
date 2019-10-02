@@ -3,10 +3,11 @@ import store from '~/store';
 
 const api = axios.create({
   baseURL: 'http://localhost:3333',
+
 });
 
 api.interceptors.request.use((config) => {
-  const { token } = store.getStore().auth;
+  const { token } = store.getState().auth;
 
   const headers = { ...config.hearders };
 
