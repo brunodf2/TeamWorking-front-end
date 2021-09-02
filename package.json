@@ -7,7 +7,7 @@
         "connected-react-router": "^6.5.2",
         "customize-cra": "^0.6.1",
         "history": "^4.10.1",
-        "immer": "^4.0.0",
+        "immer": "^9.0.6",
         "prettier": "^1.18.2",
         "prop-types": "^15.7.2",
         "react": "^16.9.0",
